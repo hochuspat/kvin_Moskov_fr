@@ -1,40 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+kvin_moscow_fr (README текст)
 
-## Getting Started
 
-First, run the development server:
+Приложение для преподавателя на React
+Это приложение на React предназначено для преподавателей и позволяет пользователям загружать аудиофайлы, обрабатывать распознанный текст и просматривать данные о лекции. Также в нем реализована возможность загрузки резюме лекции, файла Word, презентации, а также отображения статистики в виде столбчатой диаграммы.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Возможности
+Загрузка файлов:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Пользователи могут загружать аудиофайлы, выбирая их через соответствующий элемент интерфейса.
+Обработка текста:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Распознанный текст из загруженного аудиофайла обрабатывается с использованием серверного API.
+Сводка лекции:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Обработанные данные включают сводку лекции, которая отображается на странице.
+Загрузка файла Word:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+При наличии, пользователи могут загружать файл Word с подробностями лекции.
+Загрузка файла презентации:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+При наличии, пользователи могут загружать файл презентации, связанный с лекцией.
+Данные о производительности:
 
-## Learn More
+Данные о производительности запрашиваются с сервера и отображаются в виде столбчатой диаграммы, показывающей успеваемость по главам.
+Зависимости
+React: Библиотека JavaScript для создания пользовательских интерфейсов.
+Material-UI: Популярный фреймворк для создания отзывчивых и привлекательных интерфейсов на React.
+react-chartjs-2: Оболочка для React для библиотеки Chart.js, предназначенной для создания графиков на JavaScript.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Использование. Установите зависимости:
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Запустите приложение:
+npm start
+Откройте приложение в веб-браузере по адресу http://localhost:3000.
 
-## Deploy on Vercel
+Настройка
+Приложение взаимодействует с сервером по адресу http://127.0.0.1:8000. Убедитесь, что сервер запущен и доступен.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Серверные конечные точки
+POST /upload-audio:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Конечная точка для загрузки аудиофайлов.
+POST /process-text:
+
+Конечная точка для обработки распознанного текста.
+GET /download-word/:wordFilePath:
+
+Конечная точка для загрузки файлов Word.
+GET /download-presentation:
+
+Конечная точка для загрузки файлов презентации.
+GET /performance:
+
+Конечная точка для получения данных о производительности.
+Примечания
+В приложении реализован механизм опроса, чтобы периодически проверять обновления связанные с файлами Word и презентаций.
+
+Ошибки серверных ответов обрабатываются с выводом соответствующих сообщений об ошибке для пользователя.
+
+Убедитесь, что обновили URL сервера в коде, если бэкенд размещен на другом сервере.
