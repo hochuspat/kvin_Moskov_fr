@@ -1,0 +1,43 @@
+/* styles/TeacherPage.module.css */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .summary, .presentation, .wordFile, .audioFile, .statistics {
+    margin-top: 20px;
+  }
+  
+  .statistics div {
+    margin-bottom: 10px;
+  }
+  
+  .formButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .formButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
